@@ -29,13 +29,4 @@ class Technicien extends Model
         return $this->belongsTo(Succursale::class,"succursale_id","id");
     }
 
-    
-
-
-    public function Rendez_vous()
-{
-    return $this->hasMany(Rendez_vous::class);
-
-}
-
 }

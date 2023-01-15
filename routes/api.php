@@ -30,3 +30,5 @@ Route::get('/calendar', [App\Http\Controllers\CalendarController::class, 'Calend
 
 
 Route::post('/search', [App\Http\Controllers\TechController::class, 'TechnicienByCityAndService']);
+
+Route::post('/save_rdv', [App\Http\Controllers\RDVController::class, 'addRDV']);

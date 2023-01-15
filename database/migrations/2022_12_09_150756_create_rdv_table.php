@@ -10,17 +10,17 @@ return new class extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */ 
     public function up()
     {
-        Schema::create('rdv', function (Blueprint $table) {
+
+
+        Schema::create('rdvs', function (Blueprint $table) {
             $table->id();
             $table->date('dates');
-            $table->string('status');
+            $table->string('heures');
             $table->foreignId('technicien_id')
-            ->constrained()
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+            ->constrained();
             $table->timestamps();
         
            

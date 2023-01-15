@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('_service_succ', function (Blueprint $table) {
-            $table->foreignId("service_id")->constrained();
-            $table->foreignId("seccursale_id")->constrained();
+            $table->id();
+            $table->foreignId("service_id")
+            ->constrained();
+            $table->foreignId("seccursale_id")
+            ->constrained();
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
