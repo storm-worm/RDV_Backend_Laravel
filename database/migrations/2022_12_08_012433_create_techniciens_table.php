@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('techniciens', function (Blueprint $table) {
             $table->id();
-            $table->string('nom')->unique();
-            $table->string('description')->unique();
+            $table->foreignId('user_id')
+            ->constrained();
             $table->foreignId('admin_id')
             ->constrained();
+            $table->foreignId('service_id')
+            ->constrained();
             $table->foreignId('succursale_id')
-            ->constrained()
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+            ->constrained();
             $table->timestamps();
         });
     }

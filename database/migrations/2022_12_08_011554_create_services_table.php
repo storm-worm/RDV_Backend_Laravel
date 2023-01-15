@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("calendrier_id")->constrained();
+            $table->string('service_lib');
             $table->foreignId("admin_id")->constrained();
-            $table->string('lib');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

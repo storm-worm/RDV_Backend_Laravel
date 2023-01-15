@@ -19,14 +19,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('adress');
             $table->integer('tele');
-            $table->string('secteur_entreprise');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->foreignId('superadmin_id')
-            ->constrained()
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
             $table->timestamps();
         });
     }

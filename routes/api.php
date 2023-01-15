@@ -17,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+
+// functions which trait the table professional 
+Route::get('/technicien', [App\Http\Controllers\TechController::class, 'Technicien']);
+
+//Route::get('/service', [App\Http\Controllers\ServiceController::class, 'Service']);
+
+Route::get('/calendar', [App\Http\Controllers\CalendarController::class, 'Calendar']);
+
+
+Route::post('/search', [App\Http\Controllers\TechController::class, 'TechnicienByCityAndService']);

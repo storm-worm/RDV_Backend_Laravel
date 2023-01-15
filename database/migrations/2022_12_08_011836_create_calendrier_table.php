@@ -12,13 +12,16 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('_calendrier', function (Blueprint $table) {
+     {
+        Schema::create('calendriers', function (Blueprint $table) {
             $table->id();
             $table->string('heures');
-            $table->string('semains');
             $table->string('jours');
             $table->string('mois');
+            $table->foreignId('service_id')
+            ->constrained();
+            $table->foreignId('succursale_id')
+            ->constrained();
             $table->timestamps();
         });
     }

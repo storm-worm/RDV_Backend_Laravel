@@ -9,20 +9,28 @@ class Technicien extends Model
 {
     use HasFactory;
 
-    public function Succursale()
+    public function User()
     {
-        return $this->belongsTo(Succursale::class,"succursale_id","id");
-    }
-
-    public function Service()
-    {
-        return $this->belongsToMany(Service::class,"_service_tech","technicien_id","service_id");
+        return $this->belongsTo(User::class,"user_id","id");
     }
 
     public function Admin()
     {
         return $this->belongsTo(Admin::class,"admin_id","id");
     }
+
+    public function Service()
+    {
+        return $this->belongsTo(Service::class,"service_id","id");
+    }
+
+    public function Succursale()
+    {
+        return $this->belongsTo(Succursale::class,"succursale_id","id");
+    }
+
+    
+
 
     public function Rendez_vous()
 {

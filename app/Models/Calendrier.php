@@ -9,9 +9,8 @@ class Calendrier extends Model
 {
     use HasFactory;
 
-    public function Service()
-{
-    return $this->hasMany(Service::class);
-
-}
+    public function Calendrier()
+    {
+        return $this->belongsTo(Service::class,"service_id","id");
+    }
 }
